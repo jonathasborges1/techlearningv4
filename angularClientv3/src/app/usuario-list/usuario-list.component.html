@@ -1,0 +1,20 @@
+<p>usuario-list works!</p>
+<table class = "table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of listaDeUsuarios">
+      <td> {{ usuario.id }} </td>
+      <td> {{ usuario.nome }} </td>
+      <td> {{ usuario.email }} </td>
+      <td> {{ usuario.especialidade }} </td>
+    </tr>
+  </tbody>
+</table>
+

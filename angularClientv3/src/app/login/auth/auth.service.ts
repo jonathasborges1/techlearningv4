@@ -10,12 +10,12 @@ export class AuthenticationService {
   // BASE_PATH: 'http://localhost:8080'
   USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
 
-  public username: String | undefined;
-  public password: String | undefined;
+  public username!: String;
+  public password!: String;
 
   constructor(private http: HttpClient) {}
 
-  authenticationService(username: string | undefined, password: string | undefined) {
+  authenticationService(username: string, password: string) {
     return this.http.get(`http://localhost:8080/api/v1/basicauth`,
       { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
       this.username = username;
